@@ -34,5 +34,9 @@
   "Role": {
     "dataSource": "mongoDS",
     "public": false
+  },
+  "products": {
+    "dataSource": "mongoDS",
+    "public": true
   }
 }
