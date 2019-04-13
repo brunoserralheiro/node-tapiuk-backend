@@ -38,5 +38,9 @@
   "products": {
     "dataSource": "mongoDS",
     "public": true
+  },
+  "Users": {
+    "dataSource": "mongoDS",
+    "public": true
   }
 }
