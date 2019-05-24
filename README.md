@@ -8,7 +8,7 @@ It is requered to have MongoDB and Node 8 installed on your computer.
 
 
 
-0. on a CLI type:
+1. on a CLI type:
 
 npm i
 npm start
@@ -22,25 +22,30 @@ Browse your REST API at http://localhost:3030/explorer
 
 
 
-1. create TAPIUK database on MongoDB
-2. create User collection
-3. insert an user:
+2. create TAPIUK database on MongoDB
+3. create User collection
+OR alternatively  remove AUTH feature by commenting line 5 on server\boot\authentication.js
+
+// server.enableAuth();
+
+
+4. If using authentication plese insert an user directly on MongoDB User collection:
 {
-  "username":"...",
-  "email":"",
-  "password":""
+  "username":"myuser",
+  "email":"myemail@example.com",
+  "password":"123456"
 }
 
-4. browse on the swagger explorerr for User Post, or type  http://localhost:3030/explorer/#!/User/User_login on a browser to access the swagger explorer and login using the json object below
+5. browse on the swagger explorerr for User Post, or type  http://localhost:3030/explorer/#!/User/User_login on a browser to access the swagger explorer and login using the json object below
 
 {
-  "username":"...",
-  "email":"",
-  "password":""
+  "username":"myuser",
+  "email":"myemail@example.com",
+  "password":"123456"
 }
 
 
-5. the response should look like the below example:
+6. the response should look like the below example:
 
 {
   "id": "UVVWO6XYAv6Dma0foVeOUHV6BtIiBI2p82eF29Wl4pavTBbC9en08BLMUtPAAmj8",
@@ -51,9 +56,7 @@ Browse your REST API at http://localhost:3030/explorer
 
 copy  the "id" value and set the token on the right upper corner
 
-6. browse on the swagger explorerr for Products POST , or  type http://localhost:3030/explorer/#!/products/products_find
-
-7. type http://localhost:3030/explorer/#!/products/products_create on your browser to insert one product
+7. browse on the swagger explorer for Products POST , type http://localhost:3030/explorer/#!/products/products_create on your browser to insert one product
 
 
   {
@@ -75,3 +78,5 @@ The client and the server are Work In Progress.
 If more details are needed, please email bruno@serralheiro.eu
 
 Thank you.
+
+
