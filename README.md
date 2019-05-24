@@ -2,9 +2,26 @@
 
 
 
-This application is a REST API usin Loopback 3, express middleware, and built in  AUTH
+This application is a REST API using Loopback 3, express middleware, and built in  AUTH
 
-It is requered to have MongoDB and Node 8 installed on your computer.
+It is required to have MongoDB
+
+the default datasource is
+
+"mongoDS": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "url": "",
+    "database": "tapiuk",
+    "password": "",
+    "name": "mongoDS",
+    "user": "",
+    "connector": "mongodb"
+  }
+
+  if another path is configured, please update the above configuration on server\datasources.json file.
+
+ Node 8 installed on your computer.
 
 
 
@@ -22,8 +39,11 @@ Browse your REST API at http://localhost:3030/explorer
 
 
 
-2. create TAPIUK database on MongoDB
-3. create User collection
+2. create  database named tapiuk on MongoDB
+
+
+3. create User collection on that DB.
+
 OR alternatively  remove AUTH feature by commenting line 5 on server\boot\authentication.js
 
 // server.enableAuth();
@@ -35,6 +55,8 @@ OR alternatively  remove AUTH feature by commenting line 5 on server\boot\authen
   "email":"myemail@example.com",
   "password":"123456"
 }
+
+
 
 5. browse on the swagger explorerr for User Post, or type  http://localhost:3030/explorer/#!/User/User_login on a browser to access the swagger explorer and login using the json object below
 
@@ -56,6 +78,8 @@ OR alternatively  remove AUTH feature by commenting line 5 on server\boot\authen
 
 copy  the "id" value and set the token on the right upper corner
 
+
+
 7. browse on the swagger explorer for Products POST , type http://localhost:3030/explorer/#!/products/products_create on your browser to insert one product
 
 
@@ -66,11 +90,15 @@ copy  the "id" value and set the token on the right upper corner
   }
 
 
+
+
 8. browse on the swagger explorer for Products GET, or type http://localhost:3030/explorer/#!/products/products_find on your browser
+
 
 or checkout a client
 
 (git clone) https://github.com/brunoserralheiro/angular-tapiuk-frontend
+
 
 
 The client and the server are Work In Progress.
